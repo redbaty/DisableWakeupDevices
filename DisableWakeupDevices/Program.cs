@@ -12,12 +12,12 @@ namespace DisableWakeupDevices
         public static List<string> ArmedDevices { get; } = GetArmedDevices().ToList();
         public static List<string> Devices { get; } = GetDevices().ToList();
 
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteAscii("Devices", Color.CornflowerBlue);
             Console.WriteLine("Management v1.0\n", Color.YellowGreen);
 
-            var response = AskQuestion("Do you wish to (e)nable or (d)isabled devices ?", new List<string> {"e", "d"});
+            var response = AskQuestion("Do you wish to (e)nable or (d)isable devices ?", new List<string> {"e", "d"});
 
             if (response == "e")
                 EnableDevices();
